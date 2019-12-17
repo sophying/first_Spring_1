@@ -5,6 +5,7 @@ public class SamsungTV implements TV {
 	
 	private SonySpeaker speaker;
 	private int price;
+	private int price2;
 	
 	// SamsungTV 생성자 
 	public SamsungTV( ) {
@@ -28,6 +29,15 @@ public class SamsungTV implements TV {
 		this.price = price;
 	}
 	
+	// SamsungTV 생성자의 overloading
+	public SamsungTV(SonySpeaker speaker, int price,int price2) {
+		
+		System.out.println("SamsungTV speaker / price 생성자");
+		this.speaker = speaker; // 자기 자신의 멤버로 넘겨줌
+		this.price = price;
+		this.price2 = price2;
+	}
+	
 	
 	
 	
@@ -47,7 +57,7 @@ public class SamsungTV implements TV {
 	
 	@Override
 	public void powerOn() {
-		System.out.println("SamsungTV---전원 켠다.(가격 : "+price+" )");
+		System.out.println("SamsungTV---전원 켠다.(가격 : "+price2+" )");
 	}
 
 	@Override
