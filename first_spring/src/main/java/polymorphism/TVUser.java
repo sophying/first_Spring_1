@@ -37,20 +37,20 @@ public class TVUser {
 		   
 		   // Singleton Pattern
 		   /* 하나의 객체를 공유 함  */
-			TV tv1 = (TV) factory.getBean("tv");	
-			TV tv2 = (TV) factory.getBean("tv");	
-			TV tv3 = (TV) factory.getBean("tv");	
-/*			
-
+			TV tv = (TV) factory.getBean("tv");
+			tv.powerOn();
+			tv.volumeUp();
+			tv.volumeUp();
+			tv.volumeUp();
+			tv.volumeDown();
+			tv.volumeDown();
+			tv.powerOff();
+/*
 			TV tv7 = factory.getBean("tv");	 // id 로 찾을 경우, 형변환 o 
 			TV tv7 = factory.getBean(SamsungTV.class);	 // class가 작성되었을 경우, 형변환 X -> class 명을 찾아감
 			TV tv7 = factory.getBean("tv",SamsungTV.class);	 // 기본 형식 
 */			
-			System.out.println(tv1);
-			System.out.println(tv2);
-			System.out.println(tv3);
-
-			
+		
 			factory.close();
 			
 /*		   

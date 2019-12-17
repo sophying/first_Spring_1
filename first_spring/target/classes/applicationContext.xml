@@ -7,7 +7,17 @@
 
  <bean id="tv" class="polymorphism.SamsungTV" scope="singleton" lazy-init="true"></bean>
  -->
- <bean  id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod" lazy-init="true" scope="prototype"></bean>
+ <bean  id="tv" class="polymorphism.SamsungTV" >
+ 	<constructor-arg ref="sony"></constructor-arg>
+ 	<constructor-arg value="2500000"></constructor-arg>
+ </bean>
+ 
+ <bean id="sony" class="polymorphism.SonySpeaker"></bean>
+ 
+ 
+ 
+ 
+<!-- <bean  id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod" lazy-init="true" scope="prototype"></bean> --> 
  <bean  class="polymorphism.LgTV"></bean>
  <bean  class="polymorphism.DeawooTV"></bean>
  
