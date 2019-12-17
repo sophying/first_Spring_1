@@ -1,6 +1,15 @@
 package polymorphism;
 
 public class LgTV implements TV{
+	
+	
+	// LgTV 생성자 
+	public LgTV() {
+	
+		System.out.println("LgTV 생성자");
+		
+		
+	}
 
 	@Override
 	public void powerOn() {
