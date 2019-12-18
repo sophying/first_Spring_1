@@ -1,28 +1,47 @@
 package polymorphism;
 
+import org.springframework.stereotype.Component;
+
 public class SamsungTV implements TV {
 
 	
-	private SonySpeaker speaker;
+	private Speaker speaker;
 	private int price;
 	private int price2;
 	
-	// SamsungTV 생성자 
+	public void setSpeaker(Speaker speaker) {
+		this.speaker = speaker; // 외부에서 전달되온 speaker 값을 자신의 멤버 변수에 담음 
+		System.out.println(" >  setSpeaker <Apple>  Test ~~~\n");
+	}
+
+
+	public void setPrice(int price) {
+		this.price = price;
+		System.out.println(" >  ~~~~ setPrice ~~~~~\n");
+	}
+
+
+	public void setPrice2(int price2) {
+		this.price2 = price2;
+		System.out.println(" >  ~~~~~~~ setPrice2 ~~~~~\n");
+	}
+	
+	// SamsungTV 기본생성자 _ 반드시 있어야 setter 을 활용할 수 있음 
 	public SamsungTV( ) {
 		
-		System.out.println("SamsungTV  Defualt 생성자");
+		System.out.println("\n *****[ SamsungTV  Defualt 생성자 ]*****");
 	}
 	
 	
 	// SamsungTV 매개변수 생성자 
-	public SamsungTV(SonySpeaker speaker) {
+	public SamsungTV(Speaker speaker) {
 	
 		System.out.println("SamsungTV speaker 생성자");
 		this.speaker = speaker; // 자기 자신의 멤버로 넘겨줌 
 	}
 	
 	// SamsungTV 생성자의 overloading
-	public SamsungTV(SonySpeaker speaker, int price) {
+	public SamsungTV(Speaker speaker, int price) {
 		
 		System.out.println("SamsungTV speaker / price 생성자");
 		this.speaker = speaker; // 자기 자신의 멤버로 넘겨줌
@@ -30,7 +49,7 @@ public class SamsungTV implements TV {
 	}
 	
 	// SamsungTV 생성자의 overloading
-	public SamsungTV(SonySpeaker speaker, int price,int price2) {
+	public SamsungTV(Speaker speaker, int price,int price2) {
 		
 		System.out.println("SamsungTV speaker / price 생성자");
 		this.speaker = speaker; // 자기 자신의 멤버로 넘겨줌
@@ -57,12 +76,12 @@ public class SamsungTV implements TV {
 	
 	@Override
 	public void powerOn() {
-		System.out.println("SamsungTV---전원 켠다.(가격 : "+price2+" )");
+		System.out.println("\nSamsungTV---전원 켠다.(가격 : "+price2+" )");
 	}
 
 	@Override
 	public void powerOff() {
-		System.out.println("SamsungTV---전원 끈다.");
+		System.out.println("SamsungTV---전원 끈다.\n");
 	}
 	
 	

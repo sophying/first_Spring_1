@@ -1,35 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-<!-- 
 
- <bean id="tv" class="polymorphism.SamsungTV" scope="singleton" lazy-init="true"></bean>
- -->
- <bean  id="tv" class="polymorphism.SamsungTV" >
- 	<constructor-arg ref="sony"></constructor-arg>
- 	<constructor-arg value="2500000"></constructor-arg>
- 	<constructor-arg index="2" value="1500000"></constructor-arg>
- </bean>
- 
- <bean id="sony" class="polymorphism.SonySpeaker"></bean>
- 
- 
- 
- 
-<!-- <bean  id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod" lazy-init="true" scope="prototype"></bean> --> 
- <bean  class="polymorphism.LgTV"></bean>
- <bean  class="polymorphism.DeawooTV"></bean>
- 
+<!--  context:component-scan  : bean 등록 하지 않고 자동스캔하여 활용가능하도록 함  -->
+
+<context:component-scan base-package="polymorphism"></context:component-scan>
+
+<bean class="polymorphism.SonySpeaker"></bean>
+
+
  <!-- 
- class 객체 ( class="polymorphism.SamsungTV" )의 이름이 tv 로 설정됨 
  
- id 는 생략가능 /  class 는 필수 
+ <bean  id="tv" class="polymorphism.SamsungTV" p:speaker-ref="sony" p:price="2500000" p:price2="5000000" ></bean>
  
- init-method="initMethod"  : default 생성자가 아닌 새롭게 객체 초기화 작업이 필요할 경우 
- destroy-method="destroyMethod" : 객체를 close 하기 전에 호출 
- lazy-init="true" : 자주 활용되지 않는 객체를 호출하는 순간에 생성하여 활용 
- scope="prototype"  : 매번 새로운 객체를 생성함   ( new 생성자를 활용하는 것과 같음 ) 
- -->
+ <bean id="sony" class="polymorphism.SonySpeaker"></bean> 
+ <bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+  -->
+
 </beans>

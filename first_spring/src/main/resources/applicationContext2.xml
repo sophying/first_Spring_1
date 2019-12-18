@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+ <bean  id="tv" class="polymorphism.SamsungTV" p:speaker-ref="sony" p:price="2500000" p:price2="5000000" >
+ 
+ 	<!-- setter 을 활용할 경우 property 활용  -->
+<!--  	
+	<property name="speaker" ref="sony"></property>  setSpeaker 을 호출하겠다는 의미 
+ 	<property name="price" value="4500000"></property>
+ 	<property name="price2" value="5000000"></property> -->
+ 	
+ 	
+ 	
+<!--  	
+		>>>> setter 을 활용할 경우 constructor 사용 불가 <<<<
+
+		<constructor-arg ref="sony"></constructor-arg>
+ 		<constructor-arg value="2500000"></constructor-arg>
+ 		<constructor-arg index="2" value="1500000"></constructor-arg> 
+-->
+ </bean>
+ 
+
+  <bean id="sony" class="polymorphism.SonySpeaker"></bean> 
+  <bean id="apple" class="polymorphism.AppleSpeaker"></bean>
+ 
+ 
+ 
+ 
+<!-- <bean  id="tv" class="polymorphism.SamsungTV" init-method="initMethod" destroy-method="destroyMethod" lazy-init="true" scope="prototype"></bean> --> 
+<!--  
+	<bean  class="polymorphism.LgTV"></bean>
+	<bean  class="polymorphism.DeawooTV"></bean>
+
+ -->
+ 
+ 
+ 
+ <!-- 
+		 class 객체 ( class="polymorphism.SamsungTV" )의 이름이 tv 로 설정됨 
+		 
+		 id 는 생략가능 /  class 는 필수 
+		 
+		 init-method="initMethod"  : default 생성자가 아닌 새롭게 객체 초기화 작업이 필요할 경우 
+		 destroy-method="destroyMethod" : 객체를 close 하기 전에 호출 
+		 lazy-init="true" : 자주 활용되지 않는 객체를 호출하는 순간에 생성하여 활용 
+		 scope="prototype"  : 매번 새로운 객체를 생성함   ( new 생성자를 활용하는 것과 같음 ) 
+ -->
+</beans>
