@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="koreaTire" class="export003.KoreaTire"></bean>
+<bean id="americaTire" class="export003.AmericaTire"></bean>
+
+<bean id="car" class="export003.Car">
+	<property name="tire" ref="koreaTire"></property>
+</bean>
+
+<!--  
+
+    <property name="tire" ref="koreaTire"></property>
+
+	*  스프링을 통한 의존성 주입  *
+	
+	스프링 설정파일(Xml) 에서 속성 주입 역할 
+
+ -->
+
+</beans>

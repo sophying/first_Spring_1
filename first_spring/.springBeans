@@ -9,6 +9,9 @@
 	<configs>
 		<config>src/main/resources/applicationContext.xml</config>
 		<config>src/main/resources/context.xml</config>
+		<config>src/main/java/export003/export003.xml</config>
+		<config>src/main/java/export004/export004.xml</config>
+		<config>src/main/java/export005/export005.xml</config>
 	</configs>
 	<autoconfigs>
 		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>
