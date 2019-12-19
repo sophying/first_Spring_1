@@ -12,6 +12,10 @@
 		<config>src/main/java/export003/export003.xml</config>
 		<config>src/main/java/export004/export004.xml</config>
 		<config>src/main/java/export005/export005.xml</config>
+		<config>src/main/java/aop002/aop002.xml</config>
+		<config>src/main/java/aop003/aop003.xml</config>
+		<config>src/main/java/aop004/aop004.xml</config>
+		<config>src/main/java/aop005/aop005.xml</config>
 	</configs>
 	<autoconfigs>
 		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>

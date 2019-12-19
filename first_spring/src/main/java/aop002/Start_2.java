@@ -10,9 +10,10 @@ public class Start_2 {
 		ApplicationContext context = new ClassPathXmlApplicationContext("aop002/aop002.xml");
 		
 		Person tom1 = context.getBean("man", Person.class);
-		Person anna1 = context.getBean("man", Person.class);
+		Person anna1 = context.getBean("woman", Person.class);
 		
 		tom1.runSomething();
+		System.out.println("");
 		anna1.runSomething();
 		
 	}

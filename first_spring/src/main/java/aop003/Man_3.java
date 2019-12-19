@@ -1,6 +1,6 @@
-package aop001;
+package aop003;
 
-public class Man_1 {
+public class Man_3 implements Person {
 	
 	public void runSomething() {
 		
@@ -11,7 +11,7 @@ public class Man_1 {
 		} catch (Exception exx) {
 
 			if (exx.getMessage().equals("주문한 음식이 도착")) {
-				System.out.println("게임을 멈추고 카드를 찾는다");							
+				System.out.println("게임을 멈추고 카드를 찾는다");
 			}
 		}finally {
 			System.out.println("결제 후 맛있게 치킨을 먹는다");

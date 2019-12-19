@@ -1,6 +1,6 @@
-package aop002;
+package aop005;
 
-public class Woman_1 {
+public class Woman_5 implements Person{
 	
 	public void runSomething() {
 		
