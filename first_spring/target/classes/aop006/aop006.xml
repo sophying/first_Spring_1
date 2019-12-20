@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		
+<!--  
+
+	@Component 를 활용하여 클래스들을 읽기 위해 적용
+	패키지에 속한 클래스 전부를 스캔할 준비 완료
+
+ -->		
+<context:component-scan base-package="aop006"></context:component-scan>
+
+<!-- 
+	@Aspect 를 활용하기 위해 적용
+	공통된 메소드를 활용하기 위해 사용 함 	
+ -->
+<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+
+</beans>
