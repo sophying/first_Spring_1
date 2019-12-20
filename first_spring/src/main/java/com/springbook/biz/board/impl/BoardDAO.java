@@ -30,7 +30,7 @@ public class BoardDAO  {
 	//CURD 기능의 메소드 구현
 	//글 등록
 	public void insertBoard(BoardVO boardVo) {
-		System.out.println("__________[ JDBC   insertBoard() 수행 ]____________");
+		System.out.println("__________[ JDBC   insertBoard() 수행 ]____________\n");
 		 
 		try {
 			
@@ -52,7 +52,7 @@ public class BoardDAO  {
 	
 	//글 수정
 	public void updateBoard(BoardVO boardVo) {
-		System.out.println("__________[ JDBC   updateBoard() 수행 ]____________");
+		System.out.println("__________[ JDBC   updateBoard() 수행 ]____________\n");
 		
 		try {
 			
@@ -74,7 +74,7 @@ public class BoardDAO  {
 	
 	//글 삭제
 	public void deleteBoard(BoardVO boardVo) {
-		System.out.println("__________[ JDBC   deleteBoard() 수행 ]____________");
+		System.out.println("__________[ JDBC   deleteBoard() 수행 ]____________\n");
 		
 		try {
 			
@@ -96,7 +96,7 @@ public class BoardDAO  {
 	
 	//글 상세 조회
 	public BoardVO getBoard(BoardVO boardVo) {
-		System.out.println("__________[ JDBC   BoardVO getBoard() 수행 ]____________");		
+		System.out.println("__________[ JDBC   BoardVO getBoard() 수행 ]____________\n");		
 		
 		BoardVO board= null;
 		
@@ -131,7 +131,7 @@ public class BoardDAO  {
 	
 	//글 목록 조회
 	public List<BoardVO> getBoarList(BoardVO boardVo){
-		System.out.println("__________[ JDBC   List<BoardVO> getBoarList() 수행 ]____________");			
+		System.out.println("__________[ JDBC   List<BoardVO> getBoarList() 수행 ]____________\n");			
 		
 		List<BoardVO> boardList = new ArrayList<BoardVO>();
 		

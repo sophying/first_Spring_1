@@ -10,8 +10,8 @@ public class JDBCUtil {
 	public static Connection getConnection() {
 		
 		try {
-			Class.forName("");
-			return DriverManager.getConnection("");
+			Class.forName("oracle.jdbc.OracleDriver");
+			return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","scott","tiger");
 			
 		} catch (Exception e) {
 			e.printStackTrace();

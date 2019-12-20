@@ -7,11 +7,12 @@ import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
-@Component // Component 등록
-@Aspect    // Aspect 임을 알림
+@Component /* 스캔 할 대상으로 등록 */
+@Aspect    /* Aspect 설정 */
 public class MyAspect_6 {
 	
-	@Pointcut("execution(* runSomething())")  // pointcut 설정 
+	/* pointCut 설정 */
+	@Pointcut("execution(* runSomething())") 
 	private void iampc() {
 		
 		System.out.println("왜 아무 의미가 없어?");

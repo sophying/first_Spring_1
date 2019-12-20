@@ -2,6 +2,7 @@ package aop006;
 
 import org.springframework.stereotype.Component;
 
+/* 스캔할 대상으로 지정하되 해당 클래스의 id 는 woman 으로 지정 */
 @Component("woman")
 public class Woman_6 implements Person{
 	

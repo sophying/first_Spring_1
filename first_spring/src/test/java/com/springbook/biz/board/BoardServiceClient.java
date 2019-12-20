@@ -10,7 +10,7 @@ public class BoardServiceClient {
 	public static void main(String[] args) {
 		
 		//1.Spring 컨테이너를 구동함
-		AbstractApplicationContext container = new GenericXmlApplicationContext("applictionContext.xml");
+		AbstractApplicationContext container = new GenericXmlApplicationContext("spring_applicationContext.xml");
 		
 		//2. Spring 컨테이너로부터 BoardServiceImpl 객체를 Lookup 함
 		BoardService boardService = (BoardService) container.getBean("boardService");
