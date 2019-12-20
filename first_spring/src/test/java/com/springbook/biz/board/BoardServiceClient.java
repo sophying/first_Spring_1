@@ -35,3 +35,12 @@ public class BoardServiceClient {
 	}
 
 }
+
+/*
+	AbstractApplicationContext   :   객체 생성과 동시에 즉시 로딩 
+	GenericXmlApplicationContext : ("spring_applicationContext.xml") XML 설정 파일 로딩 및 구동 
+	
+	getBean  : Context 의 역할 중 하나로 xml 설정 파일 속 객체 ("boardService")를 찾는 역할 
+	
+	
+*/

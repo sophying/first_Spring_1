@@ -55,7 +55,10 @@ public class BoardVO {
 		return "BoardVO [ seq="+ seq +", title="+ title +", writer="+ writer +", content=" + content +", regDate=" + regDate + ", cnt=" + cnt + " ]";
 	}
 	
+	/*
+		DB 컬럼명과 동일하도록 변수명과 타입을 설정 한 뒤 
+		setter / getter  적용 
 	
-	
+	*/
 	
 }

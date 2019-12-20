@@ -165,39 +165,10 @@ public class BoardDAO  {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	/*
+		@Component 와 @Repository  는 비슷하나  
+		@Repository 는 DB 에서 다루는 예외 처리에 좀 더 특화 되어 있으므로 DAO 클래스에 활용 함 
+	*/
 	
 	
 }
