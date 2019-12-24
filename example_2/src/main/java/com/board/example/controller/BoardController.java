@@ -6,6 +6,8 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.board.example.dto.BoardDTO;
 import com.board.example.service.BoardService;
@@ -18,7 +20,7 @@ public class BoardController {
 	BoardService boardService; 
 	
 
-	//현재 자주 쓰이는 Model 클래스를 DI 하는 방법
+	//1.현재 자주 쓰이는 Model 클래스를 DI 하는 방법
 	@RequestMapping("list.do")
 	public String boatdList(Model model) throws Exception{
 		
@@ -42,4 +44,54 @@ public class BoardController {
 	
 	
 	 */
+	
+	//2.게시글 상세내용 불러오기
+	/*  "read.do" 인식이 되면 아래 메소드를 실행 하라 */
+	@RequestMapping(value = "read.do", method= RequestMethod.GET)
+	public String boardRead(@RequestParam int bno, Model model) throws Exception{
+		BoardDTO data = boardService.boardRead(bno); // bno 값을 넘김
+		 model.addAttribute("data",data); // model 에 데이터 값을 담음  -> 해당 데이터는 board_read 로 이동
+		 return "board/board_read";// board/board_read.jsp 로 이동
+		
+	}
+	
+//___3. writer_page.jsp 매핑
+	@RequestMapping("writer_page")
+	public String writerpage() {
+		return "board/writer_page";
+		
+	}
+	
+//___3. 게시글 form  데이터 처리
+	@RequestMapping(value = "insert.do", method= RequestMethod.POST)
+	public String boardWriter(BoardDTO bdto) throws Exception{
+		boardService.writerBoard(bdto);
+		return "redirect:list.do";  //리스트로 redirect
+		
+	}
+	
+//___4. 게시글 수정 페이지로 이동 ( 수정 버튼 누를 경우 )
+	@RequestMapping(value = "updatepage", method = RequestMethod.GET)
+	public String boardUpdate(@RequestParam int bno, Model model) throws Exception{
+		BoardDTO data = boardService.boardRead(bno); // bno 값을 넘김
+		model.addAttribute("data", data); // model 에 데이터 값을 담음
+		return "board/board_update"; // board/board_update.jsp 로 이동
+	}
+	
+//___4. 게시글 수정 실행  ( 수정 완료를 한 뒤 버튼을 누를 경우 )
+	@RequestMapping(value = "update.do", method = RequestMethod.POST)
+	public String boardUpdatedo(BoardDTO bdto) throws Exception{
+		boardService.updateBoard(bdto); 
+		return "redirect:list.do";  //리스트로 redirect
+	}
+	
+//___5. 게시글 삭제 실행 
+	@RequestMapping(value = "deletepage", method = RequestMethod.GET)
+	public String boardDeletedo(@RequestParam int bno, Model model) throws Exception{
+		boardService.deleteBoard(bno); 
+		return "redirect:list.do";  //리스트로 redirect
+	}
+	
+	
+	
 }
