@@ -29,10 +29,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where bno=#{bno}
 	</update>
 	
+	
 <!--  5. 게시글 삭제 -->	
 	<delete id="boardDelete">
 		delete from S_BOARD_2 
 		where bno=#{bno}
 	</delete>
+	
+	
+<!--  6. 조회수 업데이트  -->
+	<update id="viewUpdate">
+		update S_BOARD_2 set viewcnt=(viewcnt +1)
+		where bno=#{bno}
+	</update>
+	
 </mapper>
 

@@ -24,6 +24,8 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public BoardDTO boardRead(int bno) throws Exception {
 		
+		// 상세보기 진행됨과 동시에 조회수 업데이트 
+		boardDao.viewCount(bno); 
 		return boardDao.boardRead(bno);
 	}
 
@@ -45,6 +47,12 @@ public class BoardServiceImpl implements BoardService{
 	public void deleteBoard(int bno) throws Exception {
 		boardDao.boardDelete(bno);
 		
+	}
+	
+	//6.조회수 업데이트
+	@Override
+	public void viewUpdate(int bno) throws Exception {
+		boardDao.viewCount(bno);
 	}
 
 

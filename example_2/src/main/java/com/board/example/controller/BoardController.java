@@ -41,8 +41,6 @@ public class BoardController {
 			return mav; // board/board_list.jsp 로 이동
 		
 		}
-	
-	
 	 */
 	
 	//2.게시글 상세내용 불러오기
@@ -50,8 +48,9 @@ public class BoardController {
 	@RequestMapping(value = "read.do", method= RequestMethod.GET)
 	public String boardRead(@RequestParam int bno, Model model) throws Exception{
 		BoardDTO data = boardService.boardRead(bno); // bno 값을 넘김
-		 model.addAttribute("data",data); // model 에 데이터 값을 담음  -> 해당 데이터는 board_read 로 이동
-		 return "board/board_read";// board/board_read.jsp 로 이동
+//		boardService.viewUpdate(bno);    // 조회수 업데이트 
+		model.addAttribute("data",data); // model 에 데이터 값을 담음  -> 해당 데이터는 board_read 로 이동
+		return "board/board_read";// board/board_read.jsp 로 이동
 		
 	}
 	
@@ -86,8 +85,8 @@ public class BoardController {
 	}
 	
 //___5. 게시글 삭제 실행 
-	@RequestMapping(value = "deletepage", method = RequestMethod.GET)
-	public String boardDeletedo(@RequestParam int bno, Model model) throws Exception{
+	@RequestMapping(value = "delete.do", method = RequestMethod.GET)
+	public String boardDeletedo(@RequestParam int bno) throws Exception{
 		boardService.deleteBoard(bno); 
 		return "redirect:list.do";  //리스트로 redirect
 	}

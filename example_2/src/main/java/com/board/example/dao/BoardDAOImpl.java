@@ -43,6 +43,12 @@ public class BoardDAOImpl implements BoardDAO {// BoardDAO 를 implements 한  C
 	@Override
 	public void boardDelete(int bno) throws Exception {
 		sqlSession.delete("board.boardDelete", bno);
+	}
+
+	//6. 게시물 조회수 업데이트
+	@Override
+	public void viewCount(int bno) throws Exception {
+		sqlSession.update("board.viewUpdate",bno);
 	} 
 	
 

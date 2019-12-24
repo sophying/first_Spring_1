@@ -36,7 +36,15 @@
 		<div>
 			<input type="submit" value="글수정" />
 			<input type="reset" value="리셋" />
+			<button id="listBtn">글목록</button>
 		</div>
 	</form>
+<script type="text/javascript">
+
+		$("listBtn").click(function() {
+			$(location).attr("href", "./board/board_list.jsp")
+		});
+		
+</script>
 </body>
 </html>

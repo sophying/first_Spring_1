@@ -19,4 +19,7 @@ public interface BoardDAO {
 
 	//5. 게시물 삭제
 	public void boardDelete(int bno) throws Exception;
+
+	//6. 게시물 조회수 업데이트 
+	public void viewCount(int bno) throws Exception;
 }

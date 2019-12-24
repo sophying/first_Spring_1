@@ -44,6 +44,6 @@
 		</tr>
 	</table>
 	<a href="${path }/board/updatepage?bno=${data.bno}">수정</a>
-	<a href="${path }/board/deletepage?bno=${data.bno}">삭제</a>
+	<a href="${path }/board/delete.do?bno=${data.bno}">삭제</a>
 </body>
 </html>
